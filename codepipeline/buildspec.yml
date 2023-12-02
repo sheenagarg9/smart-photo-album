@@ -19,18 +19,23 @@ phases:
     commands:
       # Install dependencies from requirements.txt into the lambda folder, if the file exists.
       - if [ -f lambda/requirements.txt ]; then pip install -r lambda/requirements.txt -t lambda; fi
+      - aws cloudformation package --template-file lambdaTemp.yml --s3-bucket p1-codepipeline --output-template-file  outputTemplate.yml
+
   pre_build:
     commands:
       # Optional pre-build steps, like running tests or linting
       - echo Pre-build steps...
+
   build:
     commands:
       # Navigate to the lambda folder and package each Python file into its own zip file
       - cd lambda
-      - zip -r index-search.zip index-photos.py
+      - zip -r index-photos.zip index-photos.py
       - zip -r search-photos.zip search-photos.py
 
 artifacts:
   files:
     - lambda/index-photos.zip
     - lambda/search-photos.zip
+    - lambdaTemp.yml
+    - outputTemplate.yml
