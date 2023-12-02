@@ -27,10 +27,10 @@ phases:
     commands:
       # Navigate to the lambda folder and package each Python file into its own zip file
       - cd lambda
-      - zip -r index-search.zip index-search.py
+      - zip -r index-search.zip index-photos.py
       - zip -r search-photos.zip search-photos.py
 
 artifacts:
   files:
-    - lambda/index-search.zip
+    - lambda/index-photos.zip
     - lambda/search-photos.zip
