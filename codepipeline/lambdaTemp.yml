@@ -12,7 +12,7 @@ Resources:
    Description: 'Lambda for CD'
    MemorySize: 128
    Timeout: 30
-   Role: 'arn:aws:iam::683207100841:role/service-role/codebuild-code-build-1-service-role'
+   Role: 'arn:aws:iam::683207100841:policy/service-role/AWSCodePipelineServiceRole-us-east-1-photo-album'
    Environment:
     Variables:
         REGION: us-east-1
@@ -26,7 +26,7 @@ Resources:
    Description: 'Lambda for CD'
    MemorySize: 128
    Timeout: 30
-   Role: 'arn:aws:iam::683207100841:role/service-role/codebuild-code-build-1-service-role'
+   Role: 'arn:aws:iam::683207100841:policy/service-role/AWSCodePipelineServiceRole-us-east-1-photo-album'
    Environment:
     Variables:
         REGION: us-east-1
