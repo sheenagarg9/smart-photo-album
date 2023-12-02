@@ -38,4 +38,4 @@ artifacts:
     - lambda/index-photos.zip
     - lambda/search-photos.zip
     - lambdaTemp.yml
-    - outputTemplate.yml
+    - outputTemplate.yaml
