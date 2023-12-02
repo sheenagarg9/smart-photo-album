@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Search and Upload</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div id="search-section">
+        <input type="text" id="search-query" placeholder="Enter search query">
+        <button onclick="searchPhotos()">Search</button>
+    </div>
+
+    <div id="results-section">
+        <!-- Search results will be displayed here -->
+    </div>
+
+    <div id="upload-section">
+        <input type="file" id="photo-upload" accept="image/*">
+        <input type="text" id="custom-labels" placeholder="Enter custom labels (comma-separated)">
+        <button onclick="uploadPhoto()">Upload</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,12 +1,36 @@
-version: 0.1
+# version: 0.1
+# phases:
+# install:
+#   commands:
+#     - aws cloudformation package --template-file lambdaTemp.yml --s3-bucket p1-codepipeline --output-template-file  outputTemplate.yml
+#     # - aws cloudformation package --template-file frontTemp.yml --s3-bucket p1-codepipeline --output-template-file outputTemplate.yaml
+# artifacts:
+# type: zip
+# files:
+#   - lambdaTemp.yml
+#   - frontTemp.yml
+#   - outputTemplate.yml
+
+
+version: 0.2
+
 phases:
   install:
     commands:
-      - aws cloudformation package --template-file lambdaTemp.yml --s3-bucket p1-codepipeline --output-template-file  outputTemplate.yml
-      # - aws cloudformation package --template-file frontTemp.yml --s3-bucket p1-codepipeline --output-template-file outputTemplate.yaml
+      # Install dependencies from requirements.txt into the lambda folder, if the file exists.
+      - if [ -f lambda/requirements.txt ]; then pip install -r lambda/requirements.txt -t lambda; fi
+  pre_build:
+    commands:
+      # Optional pre-build steps, like running tests or linting
+      - echo Pre-build steps...
+  build:
+    commands:
+      # Navigate to the lambda folder and package each Python file into its own zip file
+      - cd lambda
+      - zip -r index-search.zip index-search.py
+      - zip -r search-photos.zip search-photos.py
+
 artifacts:
-  type: zip
   files:
-    - lambdaTemp.yml
-    - frontTemp.yml
-    - outputTemplate.yml
+    - lambda/index-search.zip
+    - lambda/search-photos.zip
