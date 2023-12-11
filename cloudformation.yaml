@@ -22,7 +22,7 @@ Parameters:
     Default: p1-codepipeline-ss
   KmsKeyForOpensearch:
     Type: String
-    Default: 5c2b40cb-fb49-411a-b740-9537cbd54619
+    Default: ******************
   BucketName1:
     Type: String
     Default: NA
