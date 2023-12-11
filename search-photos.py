@@ -64,7 +64,7 @@ def get_photo_path(labels):
     labels = unique_labels
     print("inside get photo path", labels)
     host = "https://search-photos-ya6zmaniwieqwp7qykoeal6vpa.us-east-1.es.amazonaws.com/photos"
-    awsauth = ("sheenagarg9", "Sheenagarg9!")
+    awsauth = ("*******", "**********")
     for i in labels:
         path = host + '/_search?q=labels:'+i
         response = requests.get(path, headers=headers,
