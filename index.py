@@ -57,7 +57,7 @@ def lambda_handler(event, context):
     print(labels)
     url = "https://search-photos-ya6zmaniwieqwp7qykoeal6vpa.us-east-1.es.amazonaws.com/photos/_doc"
     
-    awsauth = ("sheenagarg9", "Sheenagarg9!")
+    awsauth = ("***********", "***********")
     
     headers = {
         "Content-Type": "application/json"
