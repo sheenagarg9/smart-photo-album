@@ -2,7 +2,7 @@ version: 0.2
 phases:
   build:
     commands:
-      - pip install -r requirements.txt -t .
+     # - pip install -r requirements.txt -t .
       - aws cloudformation package --template-file lambdaTemp.yml --s3-bucket p1-codepipeline-ss --output-template-file  outputTemplate.yml
       # - aws cloudformation package --template-file frontTemp.yml --s3-bucket p1-codepipeline --output-template-file outputTemplate.yaml
 artifacts:
