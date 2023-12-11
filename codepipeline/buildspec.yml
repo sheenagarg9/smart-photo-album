@@ -6,9 +6,9 @@ install:
     - aws cloudformation package --template-file lambdaTemp.yml --s3-bucket p1-codepipeline --output-template-file  outputTemplate.yml
     # - aws cloudformation package --template-file frontTemp.yml --s3-bucket p1-codepipeline --output-template-file outputTemplate.yaml
 artifacts:
-files:
-  - lambdaTemp.yml
-  - outputTemplate.yml
+  files:
+    - lambdaTemp.yml
+    - outputTemplate.yml
 
 
 # version: 0.2
